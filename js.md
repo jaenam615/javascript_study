@@ -71,7 +71,7 @@ Before `let` and `const`, `var` was the only way of making variables.
 
 ---
 
-<b> Booleans  </b>
+<h2> Booleans  </h2>
 
 Booleans in Javascript are lowercase `true` and `false`. 
 
@@ -91,5 +91,128 @@ Variable Naming Convention
 
 ----
 
+<h2> Strings  </h2>
 
+<i> Textual information  </i>  
 
+- Must be wrapped in quotes
+
+`let username = 'James'`  
+- Can use double quotes or single quotes
+- Just make sure to remain consistent  
+
+- Strings are indexed : each character has a corresponding index
+
+- Concatenation is possible in Javascript  
+- Concatenation is possible between a number and a string : results in a string
+- Strings cannot be edited (a single character cannot be updated)  
+- Overwriting the entire string is possible  
+
+---
+
+<h2> String Methods  </h2>
+
+Methods are built-in actions we can perform with individual strings.  
+
+They help us do things like:  
+- Searching within a string  
+- Replacing a part of a string  
+- Changing the case of a string  
+
+`thing.method()` - e.g. : `"hello".length()`  
+
+- toLowerCase()
+- toUpperCase()
+- trim() // remove spaces before & after
+
+- Can use multiple methods at once : e.g. `thing.trim().toUpperCase()`  
+- Some methods receive arguments  
+
+- searchFor('arg')  
+- indexOf('arg')
+- slice('arg', aux) // changes the value itself if it's a variable  
+- replace() // only replaces the first instance  
+
+---
+
+<h2> Template Literals  </h2>
+
+``I counted ${3 + 4} sheep`;`
+- Must use backtick character 
+- Dollar sign ($) with curly brances ({})
+
+---
+
+<h2> NULL & Undefined  </h2>
+
+null: Intentional absence of a value - must be assigned  
+undefined: Variables that do not have an assigned value  
+
+---
+
+ Math Object - Contains properties and methods for mathematical constants and functions 
+
+ ---
+
+ <h2> Data Structure  </h2>
+
+ ---
+
+ Arrays 
+
+ Ordered collection of values.
+
+ Different types of data can be contained in a single array.
+
+---
+
+Array Methods 
+
+- Push : add to the end of an array  
+- Pop : remove from the end of an array  
+- Shift : remove from the start of an array
+- Unshift - add to the start of an array  
+
+- concat - merge arrays
+- indexOf - like string.indexOf
+- includes - look for a value
+- reverse - reverse the array
+
+- slice - copies a portion of an array
+- splice - removes/replaces elements
+
+--- 
+
+Triple equals operator `===`
+
+---
+
+Const with an array : as long as the reference (the container's address) remains the same, the contents may be changed. 
+
+---
+
+Nested Array  
+
+- Arrays may be stored within arrays  
+
+---
+
+<h2> Objects  </h2>
+
+- Objects are collections of properties
+- Properties are a key-value pair 
+- Rather than accessing data using an index, we use custom keys. 
+
+```JavaScript
+const fitBitData = {
+    totalSteps : x,
+    totalMiles : y,
+    .
+    .
+    .
+};
+```
+---
+
+It's a common pattern to have an array of objects.
+Use of both in combination is more powerful than either used alone.  
