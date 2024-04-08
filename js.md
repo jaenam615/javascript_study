@@ -137,7 +137,7 @@ They help us do things like:
 
 <h2> Template Literals  </h2>
 
-``I counted ${3 + 4} sheep`;`
+``` `I counted ${3 + 4} sheep`;```
 - Must use backtick character 
 - Dollar sign ($) with curly brances ({})
 
@@ -216,3 +216,81 @@ const fitBitData = {
 
 It's a common pattern to have an array of objects.
 Use of both in combination is more powerful than either used alone.  
+
+---
+
+<b>For ... of Loops</b>  
+
+
+```JavaScript
+const array;
+
+for (const element of array ){
+    console.log(element);
+}
+```
+
+> Can be used in a syntax similar to that of Python.   
+
+A for...of loop can be used for anything iterable.  
+In order to iterate over an object, a for...in loop is possible.  
+
+
+---
+
+<h2>Functions  </h2>
+
+Useful for actions that occur repetititvely.   
+
+- Arguments 
+
+- Return Values: May be captured in a variable for later use. 
+- "Exporting" a value out of a function.   
+
+---
+
+Blockscoping 
+
+variables inside functions exist only within the function.  
+
+Same is applied for conditionals.  
+
+Lexical functions - functions within fuctions have access to variables declared in the 'parent' function.  
+
+--- 
+
+Function expressions: 
+
+```JavaScript
+const add = function (x, y) {
+    return x + y;
+}
+```
+- As seen above, functions are also values that can be stored in a variable.  
+
+---
+
+<b>Higher Order Functions  </b>
+
+1. Functions that accept a function as a variable  
+
+```JavaScript
+function callTwice(func, aux = undefined){
+    if (aux != null || aux != undefined){
+        func(aux);
+        func(aux); 
+    } else {
+        func(); 
+        func(); 
+    }
+}
+
+function rollDie(){
+    const roll = Math.floor(Math.random() * 6) + 1
+    console.log(roll)
+}
+
+callTwice(rollDie);
+```
+
+2. Functions that return a function  
