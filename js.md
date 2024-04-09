@@ -294,3 +294,152 @@ callTwice(rollDie);
 ```
 
 2. Functions that return a function  
+```JavaScript
+function makeMysteryFunc(){
+    const rand = Math.randmo();
+    if (rand > 0.5){
+        return function(){
+            console.log("Contrats!"); 
+        }
+    } else {
+        return function(){
+            alert("holy crap");
+        }
+    }
+}
+```
+
+--- 
+
+Methods
+
+```JavaScript
+const myMath = {
+    multiply : function(x, y){
+        return x*y;
+    },
+    divide : function(x, y){
+        return x/y;
+    },
+    square : function (x){
+        return x * x; 
+    }
+}
+```
+'This' in methods  
+
+- Can access elements within the object itself  
+
+```JavaScript
+const cat = {
+    name: 'jaecat',
+    color: 'black',
+    age: 2, 
+    meow(){
+        console.log(`${this.name} says meow`);
+    }
+}
+```
+
+`window` object - the highest object that is set at default  
+
+--- 
+
+Try & Catch  
+
+When trying to do something that is uncertain (or does not exist for that matter), try is a way to check without the entire code failing.  
+
+```JavaScript
+try {
+    hello.toUpperCase();
+} catch {
+    console.log("ERROR!");
+}
+
+console.log("AFTER");
+```
+
+```JavaScript
+function yell(msg){
+    try{
+        console.log(msg.toUpperCase().repeat(3)); 
+    } catch(e){
+        console.log(e); 
+        console.log('Please pass a string next time!');
+    }
+}
+```
+
+---
+
+<h1>Array Methods  </h1>
+
+- forEach: runs a function for each element in an array 
+
+```JavaScript
+const numbers = [1, 2, 3, 4, 5];
+
+function print(element){
+    console.log(element);
+}
+
+numbers.forEach(print);
+```
+
+- map: same as forEach in the sense that it applies a function for each element in a given array, but returns a new array with the function applied. 
+
+```JavaScript
+const numbers = [1, 2, 3, 4, 5];
+
+const doubles = numbers.map(function(num){
+    return num*2
+})
+``` 
+
+---
+
+Arrow Functions  
+
+- Syntactically compact 
+
+```JavaScript
+const add = (x, y) => {
+    return x+y;
+}
+
+const square = (x) => {
+    return x*x;
+}
+```
+- Implicit returns: 
+
+```JavaScript
+const rollDie = () => (
+    Math.floor(Math.random() *6) + 1
+)
+
+const add = (a, b) => a + b
+```
+
+```JavaScript
+const isEven = function(num){ //regular function expression
+    return num % 2 === 0;
+}
+
+const isEven = (num) => { //arrow function with parens around the argument
+    return num % 2 === 0;
+}
+
+const isEven = num => { //arrow function with no parens around the argument
+    return num % 2 === 0;
+}
+
+const isEven =  num =>( //arrow function with no return statement using parens (implicit return)
+    num % 2 === 0
+);
+const isEven = num = > num % 2 === 0; //one-liner with no parens
+```
+--- 
+
+
+
