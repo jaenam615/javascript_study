@@ -364,7 +364,7 @@ function yell(msg){
     try{
         console.log(msg.toUpperCase().repeat(3)); 
     } catch(e){
-        console.log(e); 
+        console.log(e);
         console.log('Please pass a string next time!');
     }
 }
@@ -404,11 +404,11 @@ Arrow Functions
 
 ```JavaScript
 const add = (x, y) => {
-    return x+y;
+    return x+y
 }
 
 const square = (x) => {
-    return x*x;
+    return x*x
 }
 ```
 - Implicit returns: 
@@ -434,12 +434,141 @@ const isEven = num => { //arrow function with no parens around the argument
     return num % 2 === 0;
 }
 
-const isEven =  num =>( //arrow function with no return statement using parens (implicit return)
+const isEven = num =>( //arrow function with no return statement using parens (implicit return)
     num % 2 === 0
 );
-const isEven = num = > num % 2 === 0; //one-liner with no parens
+
+const isEven = num => num % 2 === 0; //one-liner with no parens
 ```
 --- 
 
+setTimeout
+
+```JavaScript
+setTimeout(() => {
+    console.log("Hello!")
+}, 3000)
+```
+
+- first argument is the callback, second is the amount of time set before calling the callback action  
+
+setInterval
+
+```JavaScript
+setInterval(()=> {
+    console.log(Math.random())
+}, 2000);
 
 
+// Stopping using the ID: 
+const ID = setInterval(()=> {
+    console.log(Math.random())
+}, 2000);
+
+clearInterval(ID);
+
+```
+
+Filter
+
+- Make a filtered array where if an element returns true for the conditions, it becomes an aleement of the new array  
+
+```JavaScript
+const goodMoves = movies.filter(movie => (
+    movie.score > 80
+))
+```
+
+---
+
+Some & Every  
+
+- Some: Passes true if any element in an array meets the condition  
+- Every: Passes true if every element in an array meets the condition
+
+```JavaScript
+const words = ["dog", "dig", "log", "bag", "wag"];
+
+words.some(word => (
+    word.length == 3
+))
+//returns true
+
+words.some(word =>(
+    word[0] === 'd'
+))
+//returns true
+
+words.every(word=> (
+    word.length == 3
+))
+//returns true 
+
+words.every(word=>(
+    word[0] === 'd'
+))
+//returns false
+
+words.every(w=> {
+    let lastLetter = w[w.length - 1];
+    return lastLetter === 'g'
+})
+//returns true 
+```
+
+---
+
+<h2>Reduce  </h2>
+
+Takes some array, and reduces it down to a single value.  
+
+```JavaScript
+const prices= [9.99, 1.50, 19.99, 49.99, 30.50];
+
+let total = 0;
+for (let price of prices){
+    total += price 
+}
+console.log(total)
+
+//
+const total = prices.reduce((total, price)=> {
+    return total + price
+})
+
+
+const minPrice = prices.reduce((min, price) => {
+    if (price < min) return price
+    else return min
+})
+```
+
+- an initial starting point may be set for the acculumulator value of reduce:
+- specify a value afor the second argument 
+
+---
+
+```JavaScript
+const person = {
+    firstName: 'James',
+    lastName: 'Nam',
+    fullName: function() {
+        return `${this.firstName} ${this.lastName}`
+    }
+}
+
+//with arrow function 
+const person = {
+    firstName: 'James',
+    lastName: 'Nam',
+    fullName: function() {
+        return `${this.firstName} ${this.lastName}`
+    },
+    shoutNam: function(){
+        setTimeout(function() => {
+            console.log(this.fullName())
+        }, 3000)
+    }
+}
+
+```
