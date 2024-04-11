@@ -572,3 +572,115 @@ const person = {
 }
 
 ```
+---
+
+Default Parameters  
+
+```JavaScript
+function rollDie(numSides = 6){
+    return Math.floor(Math.random * numSides) + 1;
+}
+```
+
+same as python  
+
+--- 
+
+Spread  
+
+- allows an iterable such as an array to be expanded in places where zero for more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in placeswhere zero or more key-value pairs (for object literals) are expected.  
+
+```JavaScript
+const nums = [13, 4, 5, 21, 38];
+
+Math.max(nums) //does not work 
+
+Math.max(...nums) //this works (spreads)
+```
+
+- Can be applied to arrays, strings, objects, etc (Iterables)
+
+---
+
+Rest  
+
+```JavaScript
+function sum(...nums){ // collects all remaining elements in an array
+    console.log(nums) 
+    return nums.reduce((total, el) => total + el)
+}
+
+```
+
+---
+
+Destructuring  
+
+Arrays: 
+```JavaScript
+const raceResults = ['Eliud Kipchoge', 'Feyisa Lelisa', 'Galen Rupp', 'James Nam', 'Sungjoon Moon'];
+
+const [ gold, silver, bronze] = raceResults;
+gold; //Eliud Kipchoge
+silver; //Feyisa Lelisa 
+bronze; //Galen Rupp
+
+const [ fastest, ...everyonElse ] = raceResults;
+fastest; //Eliud Kipchoge
+everyoneElse; // [Feyisa Lelisa, Galen Rupp, James Nam, Sungjoon Moon]
+```
+
+Objects: 
+```JavaScript
+
+```
+
+---
+
+DOM - Document Object Model  
+
+- The JavaScript representation of a webpage  
+- "window" or the "access portal"
+- Bunch of JavaScript objects that interact with HTML/CSS   
+
+---
+
+The DOM  
+
+- The document object is our entry point into the world of DOM  
+- Automatically created by the browser  
+- Constains representations of all the content on a page, and provides lots of useful methods  
+
+---
+
+Selecting: 
+
+getElementById: 
+
+- method that exists on the document
+```JavaScript
+const id = document.getElementById('id');
+```
+
+
+getElementsByTagName: 
+
+- returns an HTMLCollection 
+
+```JavaScript
+const tagName = document.getElementsByTagName('TagName');
+```
+
+- looks like an array, but is not  
+- is iterable  
+
+getElementsByClassName
+
+---
+
+querySelector  
+
+- A swiss knife version of getElement
+- Simply gives the first match  
+
+querySelectorAll   
