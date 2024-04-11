@@ -684,3 +684,67 @@ querySelector
 - Simply gives the first match  
 
 querySelectorAll   
+
+---
+
+Manipulation  
+
+- .innerText : simply changes the text (does not apply html)
+- .innerHTML : appears no different from innerText at times, but has tags included when looked at carefully - retrieves the full content  
+
+Using DOM & JavaScript to manipulate HTML & Style: 
+
+```JavaScript
+const id = document.querySelector('#container');
+id.style.textAlign = 'center';
+
+const image = document.querySelector('img');
+image.style.width = '150px';
+image.style.borderRadius = '50%';
+```
+
+Rainbow text (iterable)  
+
+```JavaScript
+<!DOCTYPE html>
+
+<head>
+    <title>Rainbow</title>
+    <!--LEAVE THESE LINES ALONE, PLEASE! THEY MAKE THE LIVE PREVIEW WORK!-->
+    <script src="node_modules/babel-polyfill/dist/polyfill.js" type="text/javascript"> </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/nodelist-foreach-polyfill@1.2.0/index.min.js"></script>
+</head>
+
+<body>
+    <!--DON'T TOUCH THIS FILE PLEASE!-->
+    <h1>
+        <span>R</span>
+        <span>A</span>
+        <span>I</span>
+        <span>N</span>
+        <span>B</span>
+        <span>O</span>
+        <span>W</span>
+    </h1>
+</body>
+
+</html>
+
+// JavaScript below
+
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']; //PLEASE DON'T CHANGE THIS LINE!
+
+//YOU CODE GOES HERE:
+const rainbow = document.querySelectorAll('h1 span');
+
+for (let i = 0; i < colors.length; i++){
+    rainbow[i].style.color = colors[i];
+}
+
+
+```
+
+
+
+---
