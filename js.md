@@ -874,3 +874,115 @@ Asynchronous Javascript and XML
 
 - e.g. infinite scroll 
 - creating applications where using JavaScript, we can load or send data, fetch information, etc. behind the scenes that do not require refreshing  
+
+---
+
+APIs  
+
+Application Programming Interface : 
+
+- A very broad term that refers to any interface for one computer to interact or communicate with another piece of software  
+- one piece of software to another piece of software  
+
+Web APIs : interfaces that are web based, HTTP based  
+
+Web APIs expose certain endpoints - and these endpoints that are exposed are going to respond with information for code (or other softwares) to consume  
+
+* Twillio API  
+ - SMS / EMAIL / ETC
+
+ ---
+
+JSON 
+
+Format that APIs will frequently use to send data back rather than HTML, CSS and JavaScript  
+
+How to turn JSON into a JavaScript object:  
+`JSON.parse(data)` -> turns data into an object 
+
+turn a Javascript object into a JSON:  
+`JSON.stringify(value)` 
+
+---
+
+POSTMAN - for testing APIs  
+
+---
+
+HTTP Verbs  
+
+GET:  
+- Getting/Retrieving 
+
+ 
+POST:  
+- Send data somewhere (will be saved somewhere and have an impact on the server)
+
+HTTP Status Codes  
+
+2xx: Successful Responses  
+200: OK  
+201: Created (POST)   
+3xx: Redirections
+- 301 Moved Permanently
+4xx: Client Error Responses  
+- 400 Bad Request
+- 404 Not Found  
+- 405 Method Ndt Allowed (Wrong Method)  
+5xx: Server Error Responses  
+- 500 Internal Server Error  
+- 502 Bad Gateway  
+
+---
+
+Query Strings  
+
+---
+
+HTTP Headers
+
+Key-Value pairs  
+
+---
+
+Fetch API  
+
+Newer way of making requests via JS  
+- Supports promises  
+
+```JavaScript
+
+fetch("https://swapi.dev/api/people/1/")
+//Returns a promise 
+    .then(res=> {
+        console.log("RESOLVED", res);
+        return res.json() //also returns a promise....
+    .then(data=>{
+        console.log("JSON", data);
+    })
+    .catch(e=> {
+        console.log("ERROR!", e);
+    })
+```
+---
+
+Axios  
+
+Library for making HTTP requests  
+
+---
+
+Prototypes  
+
+What is a prototype?  
+
+- Template object : contains a bunch of methods  
+
+---
+
+<h2>The TERMINAL  </h2>
+
+Cruicial: 
+- 
+
+Important: 
