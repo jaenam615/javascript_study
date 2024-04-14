@@ -744,7 +744,245 @@ for (let i = 0; i < colors.length; i++){
 
 
 ```
+- toggle: 
+
+```JavaScript
+const hellos = document.querySelectorAll('li');
+
+//Reason for not working: int i & hellos.len
+// for (int i = 0; i < hellos.len ; i ++){
+//     hellos[i].classList.toggle('highlight');
+// }
+
+for (let hello of hellos){
+    hello.classList.toggle('highlight')
+}
+
+// hellos.classList.toggle('highlight');
 
 
+```
 
 ---
+
+Moving Between Heirarchy  
+
+- `.parentElement`
+- `.childElementCount`
+- `.children` : has indices, and therefore is iterable (e.g. `~.children[0]`)  
+
+Sibling Properties:  
+
+- `.previousSibling` : moves through nodes, so there may be white spaces
+- `.previousElementSibling`
+- `.nextSibling` : moves through nodes, so there may be white spaces
+- `.nextElementSibling`
+
+---
+
+createElement & appendChild  
+
+append  
+remove  
+
+---
+
+DOM Events  
+
+1. 
+- inline event : not recommended! 
+- writing the JavaScript action directly into HTML 
+
+2. 
+- onclick attribute: use domName.onclick = function()~ syntax to have a function applied on a button on click (or on mouse hover, etc etc, for that matter)  
+
+3. 
+- addEventListener : swiss army knife of listeners  
+
+```JavaScript
+const hello = document.querySelector('#hello');
+const goodbye = document.querySelector('#goodbye');
+
+hello.addEventListener('click', function(){
+    console.log('hello');
+});
+
+goodbye.addEventListener('click', function(){
+    console.log('goodbye');
+});
+```
+
+---
+
+Asynchronus JavaScript
+
+- Call Stack
+- Callback Hell
+- Web API
+- Promises
+- Async Functions
+
+---
+
+Call Stack:  
+
+The mechanism the JS interpreter uses to keep track of its position within a script that calls multiple functions.  
+
+It's how JS knows where it is.  
+- When a script calls a fcuntion, the interpreter adds it to the call stack, and then starts carrying out the function  
+- any functions that are called within the function are added on top of the stack  
+- When the current function is finished, the interpreter pops it out of the stack and resumes execution wher eit left off in the last code listing  
+
+The call stack can be seen in the chrome devtool - sources  
+A breakpoint may be set as well  
+
+--- 
+
+JavaScript is single threaded :  
+
+At any given point in time, a single JS thread is running at most one line of JS code  
+
+- Browsers come with Web APIs that are able to handle certain tasks in the background (like making requests or setTimeout)  
+- The JS call stack recognizes these Web API functions and passes them off to the browser to take care of  
+- Once the browser finishes those tasks, they return and are pushed onto the stack as a callback  
+
+---
+
+Promises : 
+
+A promise is an <b>object</b> representing the eventual completion or failure of an asynchronous operation  
+
+A common example is making a request, getting data from some other location (APIs)  
+
+---
+
+Async & Await  
+
+The `async` keyword: 
+- if the keyword `async` goes in front of a function, it always returns a promise
+
+The `await` keyword:  
+- what allows us to write asynchronous code that appears synchronous  
+- will pause execution of the function, and waits until a promise has been resolved  
+
+---
+
+AJAX  
+
+Asynchronous Javascript and XML  
+- Making requests to load information or to send information behind the scenes on a given website, seamlessly behind the scenes interacting with a server  
+
+- e.g. infinite scroll 
+- creating applications where using JavaScript, we can load or send data, fetch information, etc. behind the scenes that do not require refreshing  
+
+---
+
+APIs  
+
+Application Programming Interface : 
+
+- A very broad term that refers to any interface for one computer to interact or communicate with another piece of software  
+- one piece of software to another piece of software  
+
+Web APIs : interfaces that are web based, HTTP based  
+
+Web APIs expose certain endpoints - and these endpoints that are exposed are going to respond with information for code (or other softwares) to consume  
+
+* Twillio API  
+ - SMS / EMAIL / ETC
+
+ ---
+
+JSON 
+
+Format that APIs will frequently use to send data back rather than HTML, CSS and JavaScript  
+
+How to turn JSON into a JavaScript object:  
+`JSON.parse(data)` -> turns data into an object 
+
+turn a Javascript object into a JSON:  
+`JSON.stringify(value)` 
+
+---
+
+POSTMAN - for testing APIs  
+
+---
+
+HTTP Verbs  
+
+GET:  
+- Getting/Retrieving 
+
+ 
+POST:  
+- Send data somewhere (will be saved somewhere and have an impact on the server)
+
+HTTP Status Codes  
+
+2xx: Successful Responses  
+200: OK  
+201: Created (POST)   
+3xx: Redirections
+- 301 Moved Permanently
+4xx: Client Error Responses  
+- 400 Bad Request
+- 404 Not Found  
+- 405 Method Ndt Allowed (Wrong Method)  
+5xx: Server Error Responses  
+- 500 Internal Server Error  
+- 502 Bad Gateway  
+
+---
+
+Query Strings  
+
+---
+
+HTTP Headers
+
+Key-Value pairs  
+
+---
+
+Fetch API  
+
+Newer way of making requests via JS  
+- Supports promises  
+
+```JavaScript
+
+fetch("https://swapi.dev/api/people/1/")
+//Returns a promise 
+    .then(res=> {
+        console.log("RESOLVED", res);
+        return res.json() //also returns a promise....
+    .then(data=>{
+        console.log("JSON", data);
+    })
+    .catch(e=> {
+        console.log("ERROR!", e);
+    })
+```
+---
+
+Axios  
+
+Library for making HTTP requests  
+
+---
+
+Prototypes  
+
+What is a prototype?  
+
+- Template object : contains a bunch of methods  
+
+---
+
+<h2>The TERMINAL  </h2>
+
+Cruicial: 
+- 
+
+Important: 
