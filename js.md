@@ -983,6 +983,33 @@ What is a prototype?
 <h2>The TERMINAL  </h2>
 
 Cruicial: 
-- 
+- Installation
+- LS : list (lists all contents in the current directory)  
+- PWD : print working directory 
+- CD : change directory 
+- MKDIR : make directory
+- Touch
+- RM
+- Relative vs Absolute paths  
 
 Important: 
+- Remembering all the commands  
+
+---
+
+Reasons for using the Terminal:  
+
+- Speed  
+- Access: The terminal provides a 'mainline' into the heart of the computer, giving us access to areas we don't normally interact with  
+- Tools: Many of the tools we need are installed and used via the CMD - No other choice!  
+
+Terminology:  
+
+Terminal: THe actual cmd (Actual application)  
+Shell: Software running on the terminal  
+Bash: A popular shell  
+
+--- 
+
+Absolute Path: /Users/jaena/{directory} - / is the root directory, ~ is the home directory
+
