@@ -1013,3 +1013,113 @@ Bash: A popular shell
 
 Absolute Path: /Users/jaena/{directory} - / is the root directory, ~ is the home directory
 
+---
+
+Templating:  
+
+Allows us to define a preset 'pattern' for a web page that we can dynamically modify  
+
+- EJS: a popuylar templating engine  
+
+`<%= %>` - for a value to be embedded onto HTML (Outputs a value into our template)  
+`<% %>` - embed JavaScript without anything actually being rendered  
+
+---
+
+Partials - including templates in other templates 
+`<%- includes('path') %>`
+
+---
+
+RESTful Routing  
+
+---
+
+REST  
+
+- REpresentational State Transfer  
+- basically a set of guidelines for how a client_server should communicate and perform CRUD operations on a given resource 
+- something that is RESTful complies with REST  
+
+PATCH - an HTTP verb for updating something  
+DELETE - an HTTP verb for deleting something  
+
+---
+
+Example  
+
+Index /comments GET - display all comments  
+New /comments/new GET - form to create a new comment  
+Create /comments POST - creates new comment on server  
+Show /comments/:id - GET - details for one specific comment  
+Edit /comments/:id/edit - GET - form to edit specific comment 
+Update /comments/:id - PATCH - updates specific comment on server  
+Destroy /comments/:id - DELETE - deletes specific item on server  
+
+---
+
+`npm i uuid` 
+`uuidv4();`
+
+--- 
+
+Patch : Updating
+
+To use patch/delete or any other methods, we need to use `method-override`  
+`npm i method-override`  
+
+---
+
+SQL vs NoSQL:  
+- Structured Query Language  
+- relational databases: Everything is done in tables, a schema is pre-defined and therefore everything is conformed to a pattern  
+
+MongoDB 
+
+- uses BSON: Binary JSON  
+
+---
+
+dbs - show databases
+collections - show collections in a database  
+
+CREATE  
+`db.dogs.insert()` - insert an object in the dogs collections (Single: Object, Many: Array of objects)
+_id is the primary key (and is unique)  
+
+READ  
+`db.collection.find({key: value})` to find objects specific to the key:value pair  
+
+UPDATE  
+
+`db.collection.updateOne({key: value}, {$set {key: value}})` finds anything that complies with the first argument and updates the second argument  
+
+selector: $currentDate - updates to the current date 
+
+DELETE  
+
+`db.collection.deleteOne()`
+`db.collection.deleteMany({})` - to delete all 
+
+--- 
+
+OPERATORS  
+
+nested: a.b (dot operation)
+
+- $gt : greater than  
+e.g `db.dogs.find({age: {$gt: 8}})`
+
+- $gte : greater than and equal to  
+
+- $lt : less than 
+
+- $in:  
+`db.dogs.find({breed: {$in: ['Mutt', 'Corgi']} , age: {$lt: 10} })`
+
+--- 
+
+ORM? ODM?  
+
+Object Data Mapper  
+- maps data into usable JS objects in the case of Mongoose  
