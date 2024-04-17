@@ -1,0 +1,18 @@
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/navbar') %>
+
+    <h1>Random Number Generator</h1>
+    <p>Your random number is : <%= rand %></p>
+    
+    <!-- below are ways to get a result based on conditions -->
+    <!-- traditional else-if statement better for longer phrases -->
+    <% if (rand % 2 === 0){ %>
+        <h2>That is an even number!</h2>    
+    <% } else { %>
+        <h2>That is an odd number!</h2>
+    <% } %>
+
+    <!-- for short text -->
+    <h3><%= rand%2===0 ? 'EVEN' : 'ODD' %></h3>
+</html>
