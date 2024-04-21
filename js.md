@@ -988,8 +988,9 @@ Cruicial:
 - PWD : print working directory 
 - CD : change directory 
 - MKDIR : make directory
-- Touch
-- RM
+- Touch : create file  
+- RM : delete file  
+- Man : manual
 - Relative vs Absolute paths  
 
 Important: 
@@ -1012,4 +1013,97 @@ Bash: A popular shell
 --- 
 
 Absolute Path: /Users/jaena/{directory} - / is the root directory, ~ is the home directory
+
+--- 
+
+Man 
+
+Does not affect the file system  
+
+--- 
+
+Touch  
+
+Create file from the command line  
+
+---
+
+<h2>Node.js  </h2>
+
+Javascript runtime  
+
+- Implementation of JavaScript that executes code outside of the browser  
+ 
+ electronjs can be used to make native apps  
+
+ --- 
+
+ Node REPL (Read Evaluate Print Loop)  
+
+- continues to listen  
+- typically used to debug or to play with new features, and JavaScript may also be written  
+
+- `global` is the node equivalent of window  
+
+- `process` / `argv` : returns an array containing the command line arguments passed
+
+--- 
+
+File system methods  
+
+Synchronous - in order (will block the entire process until they complete)  
+
+---
+
+Module and NPM (Node Package Manager)  
+
+- Module.Exports
+- Requireing Modules
+- Using NPM 
+
+module.exports is used to export things out to require  
+
+--- 
+
+NPM  
+
+- A library of tons of packages  
+- A command line tool to eaily install and manage said packages  
+
+Install packages using `npm i {packageName}`  
+
+Global Packages: add `-g` flag - e.g. `npm i -g {packageName}`  
+
+---
+
+Package.JSON  
+
+`npm init` - Creator utility for package.json  
+`npm install` to get all required dependencies (needs package.json with dependencies listed)  
+
+---
+
+<h2>Express  </h2>
+
+Frameworks!  
+
+---
+
+Express helps us,,
+- start up a server to listen for requests  
+- parse incoming requests
+- match said requests to particular routes
+- craft the server's http response along with the associated content 
+
+Difference between Libraries & Frameworks  
+- One has control over the libraries - Can be used when wanted  
+- Framework is in charge, and one is merely a participant  
+
+---
+
+Express makes 2 objects automatically -> request and response
+
+---
+
+Routing  
 
