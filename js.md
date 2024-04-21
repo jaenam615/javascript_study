@@ -1310,3 +1310,7 @@ ORM? ODM?
 
 Object Data Mapper  
 - maps data into usable JS objects in the case of Mongoose  
+
+--- 
+
+Mongoose Schema Validity  
