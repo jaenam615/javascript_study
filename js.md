@@ -1314,3 +1314,31 @@ Object Data Mapper
 --- 
 
 Mongoose Schema Validity  
+
+---
+
+Middleware : 
+
+Blocks of a sort  
+
+using app.use() makes all calls go through the function called.  
+
+Below is an example usage, if you want to protect a specific directory:  
+```JavaScript
+app.get('path', 'verification function(middleware)',callback){  
+
+}  
+```
+---
+
+Passport - Allows us to implement google login/etc etc  
+
+---
+
+Password Salts  
+
+For protection of passwords, concat a random value to hash together for security  
+
+Salt methods: 
+`bcrypt.genSalt(12, )`
+`bcrypt.hash()`  
