@@ -1107,3 +1107,206 @@ Express makes 2 objects automatically -> request and response
 
 Routing  
 
+--- 
+
+Man 
+
+Does not affect the file system  
+
+--- 
+
+Touch  
+
+Create file from the command line  
+
+---
+
+<h2>Node.js  </h2>
+
+Javascript runtime  
+
+- Implementation of JavaScript that executes code outside of the browser  
+ 
+ electronjs can be used to make native apps  
+
+ --- 
+
+ Node REPL (Read Evaluate Print Loop)  
+
+- continues to listen  
+- typically used to debug or to play with new features, and JavaScript may also be written  
+
+- `global` is the node equivalent of window  
+
+- `process` / `argv` : returns an array containing the command line arguments passed
+
+--- 
+
+File system methods  
+
+Synchronous - in order (will block the entire process until they complete)  
+
+---
+
+Module and NPM (Node Package Manager)  
+
+- Module.Exports
+- Requireing Modules
+- Using NPM 
+
+module.exports is used to export things out to require  
+
+--- 
+
+NPM  
+
+- A library of tons of packages  
+- A command line tool to eaily install and manage said packages  
+
+Install packages using `npm i {packageName}`  
+
+Global Packages: add `-g` flag - e.g. `npm i -g {packageName}`  
+
+---
+
+Package.JSON  
+
+`npm init` - Creator utility for package.json  
+`npm install` to get all required dependencies (needs package.json with dependencies listed)  
+
+---
+
+<h2>Express  </h2>
+
+Frameworks!  
+
+---
+
+Express helps us,,
+- start up a server to listen for requests  
+- parse incoming requests
+- match said requests to particular routes
+- craft the server's http response along with the associated content 
+
+Difference between Libraries & Frameworks  
+- One has control over the libraries - Can be used when wanted  
+- Framework is in charge, and one is merely a participant  
+
+---
+
+Express makes 2 objects automatically -> request and response
+
+---
+
+Routing  
+
+---
+
+Templating:  
+
+Allows us to define a preset 'pattern' for a web page that we can dynamically modify  
+
+- EJS: a popuylar templating engine  
+
+`<%= %>` - for a value to be embedded onto HTML (Outputs a value into our template)  
+`<% %>` - embed JavaScript without anything actually being rendered  
+
+---
+
+Partials - including templates in other templates 
+`<%- includes('path') %>`
+
+---
+
+RESTful Routing  
+
+---
+
+REST  
+
+- REpresentational State Transfer  
+- basically a set of guidelines for how a client_server should communicate and perform CRUD operations on a given resource 
+- something that is RESTful complies with REST  
+
+PATCH - an HTTP verb for updating something  
+DELETE - an HTTP verb for deleting something  
+
+---
+
+Example  
+
+Index /comments GET - display all comments  
+New /comments/new GET - form to create a new comment  
+Create /comments POST - creates new comment on server  
+Show /comments/:id - GET - details for one specific comment  
+Edit /comments/:id/edit - GET - form to edit specific comment 
+Update /comments/:id - PATCH - updates specific comment on server  
+Destroy /comments/:id - DELETE - deletes specific item on server  
+
+---
+
+`npm i uuid` 
+`uuidv4();`
+
+--- 
+
+Patch : Updating
+
+To use patch/delete or any other methods, we need to use `method-override`  
+`npm i method-override`  
+
+---
+
+SQL vs NoSQL:  
+- Structured Query Language  
+- relational databases: Everything is done in tables, a schema is pre-defined and therefore everything is conformed to a pattern  
+
+MongoDB 
+
+- uses BSON: Binary JSON  
+
+---
+
+dbs - show databases
+collections - show collections in a database  
+
+CREATE  
+`db.dogs.insert()` - insert an object in the dogs collections (Single: Object, Many: Array of objects)
+_id is the primary key (and is unique)  
+
+READ  
+`db.collection.find({key: value})` to find objects specific to the key:value pair  
+
+UPDATE  
+
+`db.collection.updateOne({key: value}, {$set {key: value}})` finds anything that complies with the first argument and updates the second argument  
+
+selector: $currentDate - updates to the current date 
+
+DELETE  
+
+`db.collection.deleteOne()`
+`db.collection.deleteMany({})` - to delete all 
+
+--- 
+
+OPERATORS  
+
+nested: a.b (dot operation)
+
+- $gt : greater than  
+e.g `db.dogs.find({age: {$gt: 8}})`
+
+- $gte : greater than and equal to  
+
+- $lt : less than 
+
+- $in:  
+`db.dogs.find({breed: {$in: ['Mutt', 'Corgi']} , age: {$lt: 10} })`
+
+--- 
+
+ORM? ODM?  
+
+Object Data Mapper  
+- maps data into usable JS objects in the case of Mongoose  
